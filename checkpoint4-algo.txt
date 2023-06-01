@@ -1,0 +1,122 @@
+***Problem 1
+
+Given two sets of elements, find the sum of all distinct elements from the set. In other words, find the sum of all elements which are present in either of the given set.
+
+--
+set1, set2, sum := integer;
+VAR 
+
+BEGIN 
+def sum_distinct_elements(set1, set2):
+    distinct_set = set()
+    for element in set1: distinct_set.add(element)
+    for element in set2: distinct_set.add(element)
+    
+    sum = 0
+    for element in distinct_set:
+        sum += element
+    
+    return sum
+
+
+END
+
+
+
+****Problem 2 
+You are asked to write an algorithm that fulfill the following: 
+
+Name: Dot product
+Description:
+Write a procedure, called dot_product which calculates in the variable ps, the dot(scalar) product of v1 and v2 (v1 and v2 are vectors of IR)
+Write an algorithm which determines, for n pairs of given vectors, whether two vectors of given IR are orthogonal, by calling the procedure defined in the previous question. The dot product of two orthogonal vectors is zero.
+Modify the previous algorithm if you use a dot_product function instead of a procedure.
+
+
+
+
+
+-----
+
+1).Procedure for Dot Product:
+
+Name: dot_product
+Inputs: v1 and v2 of IR (real numbers)
+Output: Variable ps (scalar dot product)
+Description: The procedure calculates the dot product of v1 and v2 and stores the result in the variable ps.
+
+
+procedure dot_product(v1, v2):
+  Initialize the scalar dot product  ps = 0  
+    
+ Calculate the dot product
+   
+ for i = 1 to length(v1):
+        ps = ps + (v1[i] * v2[i])
+    
+    return (ps)
+
+
+2) Algorithm to Determine Orthogonality:
+
+algorithm determine_orthogonality(n):
+    for i = 1 to n:
+   Read vectors v1 and v2 for the current pair ::::
+        v1 = read_vector()
+        v2 = read_vector()
+
+   Calculate the dot product using the dot_product procedure:  ps = dot_product(v1, v2)
+        
+Check if the dot product is zero:  if ps == 0:
+            print "The vectors v1 and v2 are orthogonal."
+        else:
+            print "The vectors v1 and v2 are not orthogonal."
+            
+ function will  read a vector from input : function read_vector():
+  Initialize an empty vector: vector = [] 
+    
+    // Read the elements of the vector from input
+    elements = read_elements()
+    for element in elements:
+        vector.append(element)
+    return vector
+
+
+3). Modification using dot_product function:
+
+function dot_product(v1, v2):
+    ps = 0  e the scalar dot product
+    
+    
+    for i = 1 to length(v1):
+        ps = ps + (v1[i] * v2[i])
+    
+    return ps
+
+algorithm determine_orthogonality(n):
+    for i = 1 to n:
+        // Read vectors v1 and v2 for the current pair
+        v1 = read_vector()
+        v2 = read_vector()
+        
+  
+        dot_product_result = dot_product(v1, v2)
+        
+
+        if dot_product_result == 0:
+            print "The vectors v1 and v2 are orthogonal."
+        else:
+            print "The vectors v1 and v2 are not orthogonal."
+            
+
+function read_vector():
+    vector = []  // Initialize an empty vector
+    
+   
+    elements = read_elements()
+    for element in elements:
+        vector.append(element)
+   
+    return vector
+
+****
